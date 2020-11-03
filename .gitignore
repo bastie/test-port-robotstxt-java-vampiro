@@ -173,3 +173,10 @@ fabric.properties
 .vscode/
 *.code-workspace
 .history/
+
+
+# C#
+obj/
+bin/
+
+

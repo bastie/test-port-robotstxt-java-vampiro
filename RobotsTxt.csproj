@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <Version>0.1.0</Version>
+      <PackageId>RobotsTxt</PackageId>
+      <Title>.net RobotsTxt port</Title>
+      <Authors>Sebastian Ritter</Authors>
+      <Description>
+        This library enables working with robots.txt in .net languages.
+      </Description>  
+      <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+
+
+      <PackageIcon></PackageIcon>
+            
+      <PackageTags>Java;API;port;developer;google</PackageTags>
+      <PackageReleaseNotes>initial port</PackageReleaseNotes>
+      <IncludeSource>true</IncludeSource>
+
+      <RepositoryUrl>https://github.com/bastie/test-port-robotstxt-java-vampiro</RepositoryUrl>
+      <PackageSummary>RobotTxt parsing library for .net</PackageSummary>
+      <copyright>Ported 2020 Google Sebastian Ritter</copyright>
+
+    </PropertyGroup>
+  
+  
+  
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>com.google.search.robotstxt.RobotsParserApp</StartupObject> 
+    
+    <DisableWinExeOutputInference>true</DisableWinExeOutputInference>
+    <UseWPF>false</UseWPF>
+    <UseWindowsForms>false</UseWindowsForms>
+    
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- In result of serial id, deactivate 
+      - unsued values CS0414
+    -->
+    <NoWarn>0414</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- VampireApi -->
+    <ProjectReference Include="..\NetSpider\NetVampiro\NetVampiro.csproj" />
+    <!-- <PackageReference Include="VampireApi" Version="0.11.0" /> -->
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+
+</Project>
