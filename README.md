@@ -1,7 +1,10 @@
-# Google Robots.txt Parser and Matcher Library in Java
+# Google Robots.txt Parser and Matcher Library in C#
 
-This project aims to implement the robots.txt parser and matcher in Java. It is
-based on the [C++ implementation](https://github.com/google/robotstxt).
+This project aims to implement the robots.txt parser and matcher in C#. It is
+based on the [Java implementation](https://github.com/google/robotstxt-java).
+
+## Status
+This project is compileable with ''Just Another Vampire Api v0.11 or higher''.
 
 ## About the library
 
@@ -16,8 +19,8 @@ implementers implement parsing of robots.txt slightly differently, leading to
 confusion. This project aims to fix that by releasing the parser that Google
 uses.
 
-The library is a Java port of 
-[C++ parser and matcher](https://github.com/google/robotstxt) which is a
+The library is a C# port of 
+[Java parser and matcher](https://github.com/google/robotstxt-java) which is a
 slightly modified production code used by Googlebot, Google's crawler. The
 library is released open-source to help developers build tools that better
 reflect Google's robots.txt parsing and matching.
@@ -30,83 +33,29 @@ robots.txt.
 
 ### Prerequisites
 
-You need Maven to build this project.
-[Download](https://maven.apache.org/download.html) and
-[install](https://maven.apache.org/install.html) it from the official website.
-
-You can also install it like this if your Linux supports it:
-
-```
-$ sudo apt-get install maven
-```
+You need VampireApi to build this project.
+You can install it over nuget (https://www.nuget.org/packages/VampireApi/):
 
 ### Build it
 
-#### Using Maven
+#### Using cli
 
 Standard maven commands work here.
 
 ```
-$ mvn install
+$ dotnet build
 ```
-
-Or if you want a build from scratch:
-
-```
-$ mvn clean install
-```
-
-#### Using Maven Assembly Plugin
-
-Alternatively, you can compile the entire project into a single JAR using the
-following command:
-
-```
-$ mvn clean compile assembly:single
-```
-
-You can find the result in `target` directory. 
 
 ### Run it
 
-#### Using Maven
+#### Using cli
 
-Following commands will run an application that parses given robots.txt file
-and print a matching verdict: `ALLOWED` or `DISALLOWED` (exit codes are `0`
-and `1` respectively). 
-
-You should provide a target URL using `-u` (`--url`) flag. At least one agent
-must be specified using `-a` (`--agent`) flag (verdict `DISALLOWED` is printed
-iff none of the user-agents are allowed to crawl given URL).
-
-When flag `-f` (`--file`) is omitted, robots.txt contents are expected to be
-received via standard input:
+not yet supported
 
 ```
-$ mvn exec:java -Dexec.mainClass=com.google.search.robotstxt.RobotsParserApp -Dexec.args="--agent FooBot --url http://foo.com/bar"
+$ dotnet ./bin/Debug/netcoreapp3.1/RobotsTxt.dll
 ```
 
-If you want the application to read an existing robots.txt file, use flag `-f`
-(`--file`):
-
-```
-$ mvn exec:java -Dexec.mainClass=com.google.search.robotstxt.RobotsParserApp -Dexec.args="--agent FooBot --url http://foo.com/bar --file path/to/robots.txt"
-```
-
-#### From JAR
-
-If you have built the project into JAR, you can run it from there (reading
-robots.txt from standard input):
-
-```
-$ java -jar target/robotstxt-java-1.0-SNAPSHOT-jar-with-dependencies.jar --agent FooBot --url http://foo.com/bar
-```
-
-Or (reading from file):
-
-```
-$ java -jar target/robotstxt-java-1.0-SNAPSHOT-jar-with-dependencies.jar --agent FooBot --url http://foo.com/bar --file path/to/robots.txt
-```
 
 ## Notes
 
@@ -120,7 +69,7 @@ matching will be done according to the REP specification.
 
 ## License
 
-The robots.txt parser and matcher Java library is licensed under the terms of
+The robots.txt parser and matcher Java and C# library is licensed under the terms of
 the Apache license. See LICENSE for more information.
 
 ## Source Code Headers
